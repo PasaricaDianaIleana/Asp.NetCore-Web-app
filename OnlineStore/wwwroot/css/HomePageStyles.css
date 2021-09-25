@@ -1,0 +1,25 @@
+﻿.top-bar {
+    height: 40px;
+    background-color: #222;
+}
+.left-bar {
+    color: #b2b2b2;
+    font-size:12px;
+    font-family:Arial;
+    position:relative;
+    top:1rem;
+}
+.right-bar a {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    color: #b2b2b2;
+    float: right;
+    padding:1.2rem;
+    margin-top:-2.5rem;
+    border-right: 1px solid rgba(255,255,255,.3)
+}
+@media screen and (max-width:900px){
+    .top-bar{
+    display:none;
+    }
+}

@@ -9,7 +9,7 @@ namespace DataLayer.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public byte Sizeid { get; set; }
+        public byte SizeId { get; set; }
         [MaxLength(10)]
         [Required]
         public String Name { get; set; }

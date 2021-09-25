@@ -28,7 +28,7 @@ namespace DataLayer.Models
         public DbSet<Raiting> Ratings { get; set; }
         public DbSet<Size> Sizes { get; set; }
 
-        public DbSet<SubCategory> Subcategories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<ProductType> Types { get; set; }
        
 

@@ -12,11 +12,11 @@ namespace DataLayer.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public short Type_id { get; set; }
+        public int Type_Id { get; set; }
         [MaxLength(55)]
         [Required]
         public String Name { get; set; }
 
-        IList<Product> Products { get; set; }
+        public IList<Product> Products { get; set; }
     }
 }

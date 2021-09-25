@@ -13,7 +13,7 @@ namespace DataLayer.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public byte Subcategory_id { get; set; }
+        public int SubCategory_Id { get; set; }
         [MaxLength(50)]
         [Required]
         public String Name { get; set; }
