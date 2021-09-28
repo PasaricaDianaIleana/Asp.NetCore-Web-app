@@ -4,27 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OnlineStore</title>
+    <link href="~/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    
+
     <link href="~/css/HomePageStyles.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <div class="top-bar">
-            <div class="content-top-bar container" >
-            <p class="left-bar">Free shipping for standard order over $100</p>
+            <div class="content-top-bar container">
+                <p class="left-bar">Free shipping for standard order over $100</p>
             </div>
             <div class="right-bar container ">
                 <a href="#">EN</a>
                 <a href="#">RO</a>
                 <a href="#">My Account</a>
                 <a href="#">Help & FAQs</a>
-            </div> 
+            </div>
         </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
 
-                <a class="navbar-brand" asp-area="" asp-page="/Index">OnlineStore</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <span class="brand">COZA</span> STORE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,18 +34,44 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Blog" asp-action="Index">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="About" asp-action="Index">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Contact" asp-action="Index">Contact</a>
+                        </li>
+
+                        <li class="nav-item" style="margin-left:43rem;">
+                            <a class="nav-link text-dark" asp-controller="Search" asp-action="Index">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item pl-4">
+                            <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item  pl-4">
+                            <a class="nav-link text-dark"  asp-controller="WishList" asp-action="Index">
+                                <i class="far fa-heart"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div>
+        <main role="main">
             @RenderBody()
         </main>
     </div>
