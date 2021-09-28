@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\OnlineShop_Service\OnlineShop_Service.csproj" />
   </ItemGroup>
 
 </Project>
