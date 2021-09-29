@@ -29,6 +29,7 @@ namespace OnlineStore
         {
             services.AddRazorPages();
             services.AddScoped<ICategory, CategoriesService>();
+            services.AddScoped<IProduct, ProductsService>();
             services.AddDbContext<StoreDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("StoreConnection")));
         }

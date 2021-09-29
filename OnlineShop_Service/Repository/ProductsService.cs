@@ -1,5 +1,6 @@
 ﻿using DataLayer.Models;
 using DataLayer.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,40 @@ namespace OnlineShop_Service.Repository
 {
     public class ProductsService : IProduct
     {
-        public Task<Product> AddProduct(Product product)
+        private readonly StoreDbContext _context;
+
+        public ProductsService(StoreDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+     public async Task AddProduct(Product product)
+        {
+            await _context.Products.AddAsync(product);
+           await  _context.SaveChangesAsync();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var product = await GetProductById(id);
+            _context.Products.Remove(product);
+           await  _context.SaveChangesAsync();
+
         }
 
-        public Task<IList<Product>> GetAllProducts()
+        public async Task<IList<Product>> GetAllProducts()
         {
-            throw new NotImplementedException();
+            return await _context.Products.
+                ToListAsync();
+        }
+
+        public async Task<IList<Product>> GetProductByCategoryId(int id)
+        {
+            return await _context.Products.Where(c => c.CategoryId == id).ToListAsync();
+        }
+
+        public async Task<Product> GetProductById(int id)
+        {
+            return await _context.Products.Where(p => p.ProductId == id).FirstOrDefaultAsync();
         }
     }
 }

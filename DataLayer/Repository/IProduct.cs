@@ -12,10 +12,12 @@ namespace DataLayer.Repository
         Task<IList<Product>> GetAllProducts();
 
         Task Delete(int id);
-        Task<Product> AddProduct(Product product);
+        Task AddProduct(Product product);
 
-        Task<Product> GetProductByCategoryId(int id);
+        Task<IList<Product>> GetProductByCategoryId(int id);
 
+        Task<Product> GetProductById(int id);
+            
         
     }
 }
