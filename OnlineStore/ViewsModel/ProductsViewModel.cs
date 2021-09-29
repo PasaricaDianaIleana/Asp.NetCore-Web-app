@@ -11,7 +11,7 @@ namespace OnlineStore.ViewsModel
         public int ProductId { get; set; }
         public string Name { get; set; }
         public virtual string Description { get; set; }
-        public ProductPhoto MyProperty { get; set; }
+        public ProductPhoto Photo { get; set; }
         public Price Price { get; set; }
     }
 }

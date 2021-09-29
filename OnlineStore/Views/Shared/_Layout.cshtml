@@ -18,7 +18,7 @@
             <div class="right-bar container ">
                 <a href="#">EN</a>
                 <a href="#">RO</a>
-                <a href="#">My Account</a>
+                <a class="nav-link" asp-controller="User" asp-action="Index">My Account</a>
                 <a href="#">Help & FAQs</a>
             </div>
         </div>
@@ -76,11 +76,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - OnlineStore - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+  
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

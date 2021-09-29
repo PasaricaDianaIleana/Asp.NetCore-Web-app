@@ -4,14 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineStore.Controllers
+namespace OnlineStore.Controllers.User
 {
-    public class HomeController : Controller
+    public class UserController : Controller
     {
-        public HomeController()
-        {
 
-        }
         public IActionResult Index()
         {
             return View();

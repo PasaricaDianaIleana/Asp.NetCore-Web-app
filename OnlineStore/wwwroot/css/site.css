@@ -63,3 +63,21 @@
         
     }
 }
+.cardImg {
+vertical-align:middle;
+ width:80%;
+ height:100%;
+   
+}
+.categoryCard {
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #e6e6e6;
+    width:50vh;
+    height:30vh;
+
+}
+.categoryTitle{
+    top:4rem;
+}

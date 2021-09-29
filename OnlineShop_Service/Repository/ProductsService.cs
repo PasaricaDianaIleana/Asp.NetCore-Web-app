@@ -33,9 +33,21 @@ namespace OnlineShop_Service.Repository
 
         public async Task<IList<Product>> GetAllProducts()
         {
-            return await _context.Products.
+            return await _context.Products
+                .Include(p=>p.ProductPhoto)
+                .Include(p=>p.ProductOptions)
+                .ThenInclude(p=>p.Color)
+                .Include(p=>p.ProductOptions)
+                .ThenInclude(p=>p.Size)
+                .Include(p=>p.Raitings)
+                .Include(p=>p.Prices).
                 ToListAsync();
         }
+
+        public async Task<IList<Product>> GetPopularProducts()
+        {
+            return (await GetAllProducts()).Take(10).OrderBy(p => p.Raitings).ToList();
+                }
 
         public async Task<IList<Product>> GetProductByCategoryId(int id)
         {

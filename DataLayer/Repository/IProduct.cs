@@ -17,7 +17,7 @@ namespace DataLayer.Repository
         Task<IList<Product>> GetProductByCategoryId(int id);
 
         Task<Product> GetProductById(int id);
-            
-        
+
+        Task<IList<Product>> GetPopularProducts();
     }
 }
