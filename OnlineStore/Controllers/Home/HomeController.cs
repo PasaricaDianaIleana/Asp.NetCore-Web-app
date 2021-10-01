@@ -34,6 +34,7 @@ namespace OnlineStore.Controllers
                 .Select(category => new CategoryViewModel
                 {
                     CategoryName=category.Name,
+                    CategoryId=category.CategoryId,
                     Image=category.Image
                 });
             var model = new HomeViewModel

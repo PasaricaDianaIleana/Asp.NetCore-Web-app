@@ -8,6 +8,6 @@ namespace OnlineStore.ViewsModel
     public class ShopViewListModel
     {
         public IEnumerable<ProductsViewModel> products { get; set; }
-        public IEnumerable<CategoryViewModel> categories { get; set; }
+
     }
 }

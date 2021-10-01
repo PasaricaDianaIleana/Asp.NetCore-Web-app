@@ -13,16 +13,14 @@
         @{ 
             foreach(var category in Model.categories)
             {
-                <div class="col-lg-3 col-md-4 col-sm-2 ml-lg-auto ">
+                <div class="col-md-6 col-xl-4 ml-auto mr-auto abc" style="padding-bottom:30px">
+                   
+                            <a class="categoryLink" asp-action="Products" asp-controller="Shop" asp-route-id="@category.CategoryId">
+                                <div class=" categoryTitle">@category.CategoryName</div>
+                                <img src=@category.Image asp-append-version="true" class="img-fluid  cardImg" />
 
-                    <div class="card categoryCard" style="padding: 10px;">
-                        <div class="card-title categoryTitle">@category.CategoryName</div>
-                        <div class="card-body">
-                            <div class="card-img">
-                                <img src=@category.Image asp-append-version="true" class="img-fluid"/>
-                            </div>
-                        </div>
-                    </div>
+                            </a>
+
                 </div>
             }
         }
