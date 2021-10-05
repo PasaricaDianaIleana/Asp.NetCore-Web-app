@@ -31,20 +31,24 @@
         
     } 
 }
+.titleOverview{
+    margin-top:3rem;
+    font-weight:700;
+}
 .shopBtn {
     top: 21rem;
     position: relative;
     margin-left: 9rem;
     background-color: #717fe0;
-    animation-name:button;
-    animation:moving 3s liniar forwards;
-    color:white;
-    border-radius:5rem;
-    width:10%;
-    height:45px;
-    text-align:center;
-    cursor:pointer;
-    font-weight:400;
+    animation-name: button;
+    animation: moving 3s liniar forwards;
+    color: white;
+    border-radius: 5rem;
+    width: 10%;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
 }
 .shopBtn:hover{
     background-color:black;
