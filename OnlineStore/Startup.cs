@@ -3,6 +3,7 @@ using DataLayer.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +30,8 @@ namespace OnlineStore
         {
             services.AddRazorPages();
             services.AddScoped<ICategory, CategoriesService>();
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<StoreDbContext>();
             services.AddScoped<IProduct, ProductsService>();
             services.AddDbContext<StoreDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("StoreConnection")));

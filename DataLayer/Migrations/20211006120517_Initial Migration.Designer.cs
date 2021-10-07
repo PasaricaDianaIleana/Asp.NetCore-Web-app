@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20210924082413_Initial Migration")]
+    [Migration("20211006120517_Initial Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,9 @@ namespace DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -172,22 +175,16 @@ namespace DataLayer.Migrations
                     b.Property<int>("SubCategory_Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SubCategory_Id1")
-                        .HasColumnType("int");
-
                     b.Property<int>("Type_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Type_Id1")
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("SubCategory_Id1");
+                    b.HasIndex("SubCategory_Id");
 
-                    b.HasIndex("Type_Id1");
+                    b.HasIndex("Type_Id");
 
                     b.ToTable("Products");
                 });
@@ -600,11 +597,15 @@ namespace DataLayer.Migrations
 
                     b.HasOne("DataLayer.Models.SubCategory", "SubCategory")
                         .WithMany("Product")
-                        .HasForeignKey("SubCategory_Id1");
+                        .HasForeignKey("SubCategory_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DataLayer.Models.ProductType", "Type")
                         .WithMany("Products")
-                        .HasForeignKey("Type_Id1");
+                        .HasForeignKey("Type_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
 

@@ -13,12 +13,14 @@ namespace DataLayer.Models
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
-      [MaxLength(400)]
-      [Required]
+        [MaxLength(400)]
+        [Required]
         public virtual string Description { get; set; }
-
+        [ForeignKey("SubCategory")]
         public virtual int SubCategory_Id { get; set; }
+        [ForeignKey("Category")]
         public virtual int CategoryId { get; set; }
+        [ForeignKey("Type")]
         public virtual int Type_Id { get; set; }
         public virtual Category Category { get; set; }
         public virtual SubCategory SubCategory { get; set; }

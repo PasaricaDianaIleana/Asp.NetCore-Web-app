@@ -60,7 +60,8 @@ namespace DataLayer.Migrations
                 {
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -269,9 +270,7 @@ namespace DataLayer.Migrations
                     Description = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: false),
                     SubCategory_Id = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    Type_Id = table.Column<int>(type: "int", nullable: false),
-                    SubCategory_Id1 = table.Column<int>(type: "int", nullable: true),
-                    Type_Id1 = table.Column<int>(type: "int", nullable: true)
+                    Type_Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -283,17 +282,17 @@ namespace DataLayer.Migrations
                         principalColumn: "CategoryId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Products_SubCategories_SubCategory_Id1",
-                        column: x => x.SubCategory_Id1,
+                        name: "FK_Products_SubCategories_SubCategory_Id",
+                        column: x => x.SubCategory_Id,
                         principalTable: "SubCategories",
                         principalColumn: "SubCategory_Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Products_Types_Type_Id1",
-                        column: x => x.Type_Id1,
+                        name: "FK_Products_Types_Type_Id",
+                        column: x => x.Type_Id,
                         principalTable: "Types",
                         principalColumn: "Type_Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -512,14 +511,14 @@ namespace DataLayer.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_SubCategory_Id1",
+                name: "IX_Products_SubCategory_Id",
                 table: "Products",
-                column: "SubCategory_Id1");
+                column: "SubCategory_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_Type_Id1",
+                name: "IX_Products_Type_Id",
                 table: "Products",
-                column: "Type_Id1");
+                column: "Type_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ratings_ProductId",

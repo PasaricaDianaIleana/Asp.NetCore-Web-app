@@ -40,7 +40,7 @@ namespace OnlineStore.Controllers
             var model = new HomeViewModel
             {
                 categories = categories,
-                products = productList
+              
             }; 
             return View(model);
         }

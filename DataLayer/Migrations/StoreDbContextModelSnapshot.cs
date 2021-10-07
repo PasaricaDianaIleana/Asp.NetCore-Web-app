@@ -173,22 +173,16 @@ namespace DataLayer.Migrations
                     b.Property<int>("SubCategory_Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SubCategory_Id1")
-                        .HasColumnType("int");
-
                     b.Property<int>("Type_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Type_Id1")
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("SubCategory_Id1");
+                    b.HasIndex("SubCategory_Id");
 
-                    b.HasIndex("Type_Id1");
+                    b.HasIndex("Type_Id");
 
                     b.ToTable("Products");
                 });
@@ -601,11 +595,15 @@ namespace DataLayer.Migrations
 
                     b.HasOne("DataLayer.Models.SubCategory", "SubCategory")
                         .WithMany("Product")
-                        .HasForeignKey("SubCategory_Id1");
+                        .HasForeignKey("SubCategory_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DataLayer.Models.ProductType", "Type")
                         .WithMany("Products")
-                        .HasForeignKey("Type_Id1");
+                        .HasForeignKey("Type_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
 
