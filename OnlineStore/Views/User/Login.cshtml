@@ -1,0 +1,39 @@
+﻿@model OnlineStore.ViewsModel.LoginViewModel;
+<link href="~/css/LoginStyle.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "User Registration";
+}
+<div class="header-section">
+    <img src="~/images/category.jpg.webp" asp-append-version="true" class="img-fluid headerImg" alt="headerImg" />
+    <p class="text">Login</p>
+</div>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-lg-6  col-md-6">
+           <div class="login-column">
+               <h4 class="text-center text-white loginTitle">New to our Shop?</h4>
+               <p class="loginText text-center text-white">Selling across the European Union just got even easier. Introducing six new popular payment options: SEPA, 
+               Giropay, Sofort, PayPal Plus, iDEAL, and Klarna!</p>
+               <a asp-controller="User" asp-action="Register" class="btn text-uppercase accountButton" >Create an Account</a>
+           </div>
+        </div>
+        <div class="col-lg-6  col-md-6 login-forum-column">
+            <h4 class="ml-3">Welcome Back !</h4>
+            <h4 class="ml-3">Please Sign in now</h4>
+            <form method="post" class="loginForm" >
+              <div class="form-group">
+                 
+                  <input asp-for="UserName" class="form-control loginInput" type="text" placeholder="Username" />
+              </div>
+              <div class="form-group">
+                  <input asp-for="Password" class="form-control loginInput" type="password" placeholder="Password" />
+              </div>
+                <div class="form-group">
+                    <button class="btn text-uppercase loginBtn" type="submit">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

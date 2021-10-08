@@ -9,6 +9,10 @@ namespace OnlineStore.Controllers.User
     public class UserController : Controller
     {
 
+        public IActionResult Login()
+        {
+            return View();
+        }
         public IActionResult Register()
         {
             return View();

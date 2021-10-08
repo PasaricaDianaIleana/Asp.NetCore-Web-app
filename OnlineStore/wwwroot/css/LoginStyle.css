@@ -15,3 +15,96 @@
   font-weight:700;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
+.login-column {
+    background-image: linear-gradient( 90deg,#b08ead 0%,#4b3049 64%,#b08ead 100%);
+    height: 66vh;
+    width: 75vh;
+    vertical-align: bottom;
+    margin-top: 6rem;
+    margin-left:-4rem;
+}
+@media only screen and (max-width:992px){
+    .login-column {
+     margin-left:2rem;
+     width:50vh
+    }
+}
+.loginTitle {
+    font-family: "Playfair Display",serif;
+    font-size:1.8rem;
+    margin-top: 0;
+    font-style: normal;
+    font-weight: 600;
+    position: relative;
+    top:12rem;
+
+}
+.loginText {
+    font-family: "Playfair Display",serif;
+    top: 12rem;
+    text-align:center;
+    font-weight:500;
+    position: relative;
+
+}
+.accountButton {
+    position: relative;
+    top: 16rem;
+    color: white;
+    left: 7rem;
+    border: 1px solid white;
+    display: table-cell;
+    vertical-align: middle;
+    width: 27vh;
+    height: 8vh;
+}
+.accountButton:hover{
+    background-color:white;
+    color:blue;
+}
+.login-forum-column {
+    margin-top: 11rem;
+   
+}
+@media only screen and (max-width:992px) {
+
+    .login-forum-column h4 {
+        margin-left: 2rem;
+        margin-top: -5rem;
+    }
+  .login-forum-column form{
+      margin-top:5rem;
+      font-size:2rem;
+  }
+}
+.loginBtn {
+    padding: 18px 36px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #2577fd;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2577fd;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top:2rem;
+    width:54vh;
+}
+    .loginBtn:hover {
+        background-color: #2577fd;
+        color:white;
+    }
+.loginInput {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    width: 54vh;
+    margin-left: 0rem;
+}
+    .loginInput::after {
+        border: none;
+        border-radius: 0;
+    }
+.loginForm {
+    margin-top:6rem;
+}
