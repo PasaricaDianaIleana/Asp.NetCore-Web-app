@@ -8,33 +8,41 @@
         </div>
 
         <form method="post" class="registerForm">
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FirstName" class="registerLabel">First Name:</label>
                 <input type="text" asp-for="FirstName" placeholder="Enter first name" class="form-control  registerInput" />
+           <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastName" class="registerLabel">Last Name:</label>
                 <input type="text" asp-for="LastName" placeholder="Enter last name" class="form-control  registerInput" />
+           <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="registerLabel">Email:</label>
                 <input type="text" placeholder="Enter email" asp-for="Email" class="form-control  registerInput" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Country" class="registerLabel">Country:</label>
                 <input type="text" placeholder="Enter country" asp-for="Country" class="form-control  registerInput" />
+                <span asp-validation-for="Country" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PhoneNumber" class="registerLabel">PhoneNumber:</label>
                 <input type="text" placeholder="Enter PhoneNumber" asp-for="PhoneNumber" class="form-control  registerInput" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="registerLabel">Password:</label>
                 <input type="password" placeholder="Enter password" asp-for="Password" class="form-control  registerInput" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ConfirmPassword" class="registerLabel">Confirm Password:</label>
                 <input type="password" placeholder="Confirm password" asp-for="ConfirmPassword" class="form-control  registerInput" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="login-footer">
                 <button class="btn float-right signUpBtn">Sign Up</button>
