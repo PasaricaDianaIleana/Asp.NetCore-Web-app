@@ -1,0 +1,87 @@
+﻿.login-form-area {
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+    width: 65%;
+    height:1020px;
+    margin-left: 11rem;
+
+}
+@media screen and (max-width:992px){
+    .login-form-area{
+        width:85%;
+        margin-left:3rem;
+    }
+}
+.form-title {
+    color: #140c40;
+    font-size: 28px;
+    font-weight: 700;
+   padding-top:3rem;
+    text-align:center;
+    text-transform: capitalize;
+    font-family: "Jost",sans-serif;
+}
+.form-subtitle {
+    line-height: 1.1;
+    text-align: center;
+    padding-top: 1rem;
+    font-family: "Jost",sans-serif;
+    color: #140c40;
+    font-size:0.9rem;
+}
+.registerInput {
+   margin-left:3.2rem;
+    border: 1px solid #c9c9c9;
+    width: 87%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    color: #000;
+    border-radius:0;
+}
+@media screen and (max-width:992px) {
+    .registerInput {
+        width: 85%;
+        margin-left: 2rem;
+    }
+}
+.registerLabel {
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140c40;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-left: 3.2rem;
+    text-align: left;
+}
+.registerForm{
+    margin-top:7rem;
+}
+
+.loginLink:hover {
+    color: #ff2020;
+    text-decoration:none;
+}
+.loginLink {
+    color: #ff2020;
+    text-decoration: none;
+    
+}
+.signUpBtn {
+    background-color: #ff2020;
+    margin-right:2rem;
+    margin-top:-1rem;
+    height:60px;
+    padding:10px 43px;
+    border:0;
+    border-radius:0;
+    text-transform:capitalize;
+    font-size:1rem;
+    color:white;
+}
+
+.signUpBtn:hover{
+    color:white;
+}
