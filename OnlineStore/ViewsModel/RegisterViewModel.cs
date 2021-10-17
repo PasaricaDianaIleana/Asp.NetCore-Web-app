@@ -19,7 +19,6 @@ namespace OnlineStore.ViewsModel
         public string Email { get; set; }
         
         [Required]
-        [RegularExpression("^[A-Za-z]{2}$")]
         public string Country { get; set; }
         [DataType(DataType.PhoneNumber)]
         [Required]

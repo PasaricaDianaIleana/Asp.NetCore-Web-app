@@ -27,7 +27,7 @@ namespace DataLayer.Models
         public DbSet<ProductOptions> ProductOptions { get; set; }
         public DbSet<Raiting> Ratings { get; set; }
         public DbSet<Size> Sizes { get; set; }
-
+        public DbSet<User> User { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<ProductType> Types { get; set; }
        
