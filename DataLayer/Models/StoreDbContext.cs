@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Models
 {
-    public class StoreDbContext:IdentityDbContext<User,Role,String>
+    public class StoreDbContext:IdentityDbContext<User>
     {
         public StoreDbContext(DbContextOptions<StoreDbContext>options):base(options)
         {

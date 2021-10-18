@@ -51,7 +51,7 @@
     position: relative;
     top: 16rem;
     color: white;
-    left: 7rem;
+    left: 12rem;
     border: 1px solid white;
     display: table-cell;
     vertical-align: middle;
@@ -76,6 +76,21 @@
       margin-top:5rem;
       font-size:2rem;
   }
+}
+@media only screen and (max-width:1250px){
+   
+
+    .login-forum-column form {
+        margin-top: 14rem;
+        font-size: 2rem;
+        margin-left:4rem;
+        position:relative;
+    }
+    .accountButton{
+      margin-top:11rem;
+      margin-left:-3rem;
+      position:absolute;
+    }
 }
 .loginBtn {
     padding: 18px 36px;

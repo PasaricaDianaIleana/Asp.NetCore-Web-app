@@ -30,8 +30,17 @@ namespace OnlineStore
         {
             services.AddRazorPages();
             services.AddScoped<ICategory, CategoriesService>();
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredUniqueChars = 3;
+            })
                 .AddEntityFrameworkStores<StoreDbContext>();
+            
             services.AddScoped<IProduct, ProductsService>();
             services.AddDbContext<StoreDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("StoreConnection")));
