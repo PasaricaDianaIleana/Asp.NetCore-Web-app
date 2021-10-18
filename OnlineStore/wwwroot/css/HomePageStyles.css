@@ -27,3 +27,11 @@
     font-weight:bold;
     font-size:1.3rem;
 }
+.logoutBtn {
+    color: #b2b2b2;
+    margin-top: -2rem;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 70rem;
+}
