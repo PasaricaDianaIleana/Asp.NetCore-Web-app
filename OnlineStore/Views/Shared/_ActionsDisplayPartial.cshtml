@@ -1,0 +1,22 @@
+﻿@model DataLayer.Models.Product;
+<link href="~/css/AdminPageStyles.css" rel="stylesheet" />
+
+<table class="table">
+    <tbody> 
+        <tr >
+            <td>
+                <a class="adminAction" asp-action="CreateProduct" asp-controller="Admin">
+                    Add Product
+                </a>
+            </td>
+          
+        </tr>
+        <tr>
+            <td>
+                <a class="adminAction" asp-action="AddPromotion" asp-controller="Admin">
+                    Add Promotions
+                </a>
+           </td>
+        </tr>
+    </tbody>
+</table>

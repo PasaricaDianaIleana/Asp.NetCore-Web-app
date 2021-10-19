@@ -1,0 +1,24 @@
+﻿.table {
+    border: 1px solid #dcdada;
+    width: 22%;
+    background: #f1f0f0;
+    color: black;
+    margin: 3rem 0 0 3rem;
+}
+td {
+    border: 1px solid #dcdada;
+}
+.adminAction {
+    text-decoration: none;
+    color: black;
+    font-family: Arial;
+    font-size:.8rem;
+    font-weight:500;
+}
+    .adminAction:hover {
+        text-decoration: none;
+        color: black;
+        font-size: .9rem;
+        width:30%;
+        background: white;
+    }
