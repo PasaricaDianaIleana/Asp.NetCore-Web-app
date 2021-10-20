@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OnlineStore.Controllers.Category
 {
+    [AllowAnonymous]
     public class ShopController : Controller
     {
         private readonly ICategory _repo;
@@ -30,7 +32,7 @@ namespace OnlineStore.Controllers.Category
            
             return View(categories);
         }
-        
+     
         public async Task<ActionResult<IList<Product>>>Products(int id)
         {
             var products = (await _repository.GetProductByCategoryId(id)).Select(prod=>new ProductsViewModel {

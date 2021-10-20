@@ -1,4 +1,5 @@
 ﻿using DataLayer.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.ViewsModel;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly IProduct _repo;
