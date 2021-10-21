@@ -17,7 +17,12 @@ namespace OnlineStore.Controllers.Category
             _repo = repo;
         }
 
-       
+        [HttpGet]
+        public IActionResult AddCategory()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryViewModel model)
         {
@@ -31,10 +36,12 @@ namespace OnlineStore.Controllers.Category
                 .Select(Category => new CategoryViewModel
                 {
                     CategoryName = Category.Name,
-                    CategoryId = Category.CategoryId
+                    CategoryId = Category.CategoryId,
+                    Image=Category.Image
                 });
 
             return View(categories);
         }
+       
     }
 }

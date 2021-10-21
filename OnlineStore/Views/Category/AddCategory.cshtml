@@ -1,5 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model OnlineStore.ViewsModel.CategoryViewModel;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" style="margin-left:-8rem;margin-top:2rem">
+            <partial name="_ActionsDisplayPartial" />
+
+        </div>
+        <div class="col-md-10" style="margin-left:8rem;margin-top:2rem">
+            <div class="card">
+                <partial name="_CategoryDisplayPartial" />
+                <div class="card-body">
+                    Add Category form
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
