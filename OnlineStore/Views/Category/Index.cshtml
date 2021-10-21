@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OnlineStore.ViewsModel.CategoryViewModel>;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" style="margin-left:-8rem;margin-top:2rem">
+            <partial name="_ActionsDisplayPartial" />
+
+        </div>
+        <div class="col-md-10" style="margin-left:8rem;margin-top:2rem">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Category">
+                                View Categories
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="AddCategory" asp-controller="Category">
+                                Create Category
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="EditCategory" asp-controller="Category">
+                                Edit Category
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Categoies List</h5>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

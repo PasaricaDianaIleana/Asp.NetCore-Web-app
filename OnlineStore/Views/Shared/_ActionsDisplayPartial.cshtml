@@ -1,22 +1,27 @@
-﻿@model DataLayer.Models.Product;
+﻿
 <link href="~/css/AdminPageStyles.css" rel="stylesheet" />
 
-<table class="table">
-    <tbody> 
-        <tr >
-            <td>
-                <a class="adminAction" asp-action="CreateProduct" asp-controller="Admin">
-                    Add Product
-                </a>
-            </td>
-          
-        </tr>
-        <tr>
-            <td>
-                <a class="adminAction" asp-action="AddPromotion" asp-controller="Admin">
-                    Add Promotions
-                </a>
-           </td>
-        </tr>
-    </tbody>
-</table>
+<div class="card" style="width:18rem;">
+    <div class="card-header">
+        Actions
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a class="adminAction" asp-action="AddProduct" asp-controller="Products">
+                Add Product
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a class="adminAction" asp-action="AddPromotion" asp-controller="Products">
+                Add Promotions
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a class="adminAction" asp-action="Index" asp-controller="Category">
+                Create category
+            </a>
+        </li>
+    </ul>
+</div>
+
+     

@@ -33,6 +33,7 @@ namespace OnlineStore
         {
             services.AddRazorPages();
             services.AddScoped<ICategory, CategoriesService>();
+            services.AddScoped<IProduct, ProductsService>();
             services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 6;
@@ -78,8 +79,8 @@ namespace OnlineStore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -87,9 +88,6 @@ namespace OnlineStore
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-          
-
-           
         }
     }
 }
