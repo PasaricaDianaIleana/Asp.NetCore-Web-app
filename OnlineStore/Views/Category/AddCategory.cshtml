@@ -1,5 +1,8 @@
-﻿@model OnlineStore.ViewsModel.CategoryViewModel;
+﻿@model OnlineStore.ViewsModel.CategoryViewModels.CreateCategoryViewModel;
+@{
 
+    ViewBag.Title = "Create Category";
+}
 <div class="container">
     <div class="row">
         <div class="col-md-2" style="margin-left:-8rem;margin-top:2rem">
@@ -10,17 +13,32 @@
             <div class="card">
                 <partial name="_CategoryDisplayPartial" />
                 <div class="card-body">
-                    <form method="post" asp-controller="Category" asp-action="AddCategory">
+                    <form enctype="multipart/form-data" method="post" asp-controller="Category" asp-action="AddCategory">
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="form-group">
+                          
                             <input asp-for="CategoryName" type="text" class="form-control" placeholder="Category Name" />
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
+                        </div>
+                        <div class="custom-file">
+                            <label asp-for="Image" class="custom-file-label">Choose File</label>
+                            <input  asp-for="Image" class="form-control custom-file-input" />
+                            <span asp-validation-for="Image" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input  type="file" asp-for="Image" />
+                            <button class="btn  btn-primary mt-4" style="cursor:pointer;" type="submit">Create</button>
                         </div>
-                        <div class="form-group">
-                            <button class="btn  btn-primary text-uppercase" type="submit">Create</button>
-                        </div>
+
+                        @section Scripts{ 
+                            <script language="javascript">
+                                $(document).ready(function () {
+                                    $('.custom-file-input').on("change", function () {
+                                        var fileName = $(this).val().split("\\").pop();
+                                        $('.custom-file-label').text(fileName);
+                                    })
+                                });
+                            </script>
+                        }
                     </form>
                 </div>
             </div>

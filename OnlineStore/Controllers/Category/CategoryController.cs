@@ -1,20 +1,25 @@
 ﻿using DataLayer.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using OnlineStore.ViewsModel;
+using OnlineStore.ViewsModel.CategoryViewModels;
 using System;
-using System.Collections.Generic;
+using DataLayer.Models;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineStore.Controllers.Category
+namespace OnlineStore.Controllers
 {
     public class CategoryController : Controller
     {
         private readonly ICategory _repo;
+        private readonly IHostEnvironment _env;
 
-        public CategoryController(ICategory repo)
+        public CategoryController(ICategory repo,IHostEnvironment env)
         {
             _repo = repo;
+            _env = env;
         }
 
         [HttpGet]
@@ -24,9 +29,28 @@ namespace OnlineStore.Controllers.Category
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCategory(CategoryViewModel model)
+        public async Task<IActionResult> AddCategory(CreateCategoryViewModel model)
         {
-            return Ok();
+            if (ModelState.IsValid)
+            {
+                string uniqueFileName = null;
+                if (model.Image != null)
+                {
+                   string uploadFile= Path.Combine(_env.ContentRootPath, "wwwroot\\images");
+                    uniqueFileName= Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                   string filePath= Path.Combine(uploadFile, uniqueFileName);
+                    model.Image.CopyTo(new FileStream(filePath, FileMode.Create));
+
+                }
+                Category newCategory = new Category
+                {
+                    Name = model.CategoryName,
+                    Image=uniqueFileName
+                };
+               await _repo.Add(newCategory);
+                return RedirectToAction("Index", new { id = newCategory.CategoryId});
+            }
+            return View();
         }
 
         [HttpGet]
