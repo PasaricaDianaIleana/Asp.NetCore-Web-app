@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.ViewsModel;
+using OnlineStore.ViewsModel.CategoryViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

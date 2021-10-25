@@ -45,7 +45,7 @@ namespace OnlineStore.Controllers
                 Category newCategory = new Category
                 {
                     Name = model.CategoryName,
-                    Image=uniqueFileName
+                    Image="images/"+uniqueFileName
                 };
                await _repo.Add(newCategory);
                 return RedirectToAction("Index", new { id = newCategory.CategoryId});
@@ -62,10 +62,23 @@ namespace OnlineStore.Controllers
                     CategoryName = Category.Name,
                     CategoryId = Category.CategoryId,
                     Image=Category.Image
-                });
+                }).ToList();
 
             return View(categories);
         }
-       
+       [HttpGet]
+       public async Task<IActionResult> EditCategory(int id)
+        {
+            Category category = await _repo.GetCategoryById(id);
+            var categoryEditView = new CategoryEditViewModel
+            {
+                CategoryId = category.CategoryId,
+                CategoryName=category.Name,
+                ExistingPhotoPath=category.Image
+            };
+
+            return View(categoryEditView);
+        }
+      
     }
 }

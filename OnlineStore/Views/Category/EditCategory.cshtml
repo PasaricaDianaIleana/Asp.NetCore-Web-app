@@ -1,7 +1,7 @@
-﻿@model OnlineStore.ViewsModel.CategoryViewModels.CreateCategoryViewModel;
+﻿@model OnlineStore.ViewsModel.CategoryViewModels.CategoryEditViewModel
 @{
 
-    ViewBag.Title = "Create Category";
+    ViewBag.Title = "Edit Category";
 }
 <div class="container">
     <div class="row">
@@ -13,20 +13,22 @@
             <div class="card">
                 <partial name="_CategoryDisplayPartial" />
                 <div class="card-body">
-                    <form enctype="multipart/form-data" method="post" asp-controller="Category" asp-action="AddCategory">
-                        <div asp-validation-summary="All" class="text-danger"></div>
+                    <form enctype="multipart/form-data" method="get" asp-controller="Category" asp-action="EditCategory">
+                        <input hidden asp-for="CategoryId" />
+                        <input hidden asp-for="ExistingPhotoPath" />
                         <div class="form-group">
-
                             <input asp-for="CategoryName" type="text" class="form-control" placeholder="Category Name" />
                             <span asp-validation-for="CategoryName" class="text-danger"></span>
                         </div>
                         <div class="custom-file">
-                            <label asp-for="Image" class="custom-file-label">Choose File</label>
+                            <label asp-for="Image" class="custom-file-label">Click here to change photo</label>
                             <input asp-for="Image" class="form-control custom-file-input" />
                             <span asp-validation-for="Image" class="text-danger"></span>
                         </div>
+                        <img src="~/@Model.ExistingPhotoPath" style="width:40%;height:30%;" asp-append-version="true" alt="@Model.CategoryName" />
                         <div class="form-group">
-                            <button class="btn  btn-primary mt-4" style="cursor:pointer;" type="submit">Create</button>
+                            <button class="btn  text-white mt-4"  style="background-color: black; cursor: pointer;" type="submit">Update</button>
+                            <a class="btn mt-4 text-white" style="background-color:black" asp-action="Index" asp-controller="Category">Cancel</a>
                         </div>
 
                         @section Scripts{

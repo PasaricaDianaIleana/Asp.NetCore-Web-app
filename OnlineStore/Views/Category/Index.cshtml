@@ -1,5 +1,5 @@
-﻿@model IEnumerable<OnlineStore.ViewsModel.CategoryViewModel>;
-    <link href="~/css/site.css" rel="stylesheet" />
+﻿@model IEnumerable<OnlineStore.ViewsModel.CategoryViewModels.CategoryViewModel>;
+<link href="~/css/site.css" rel="stylesheet" />
 <div class="container">
     <div class="row">
         <div class="col-md-2" style="margin-left:-8rem;margin-top:2rem">
@@ -8,16 +8,18 @@
         </div>
         <div class="col-md-10" style="margin-left:8rem;margin-top:2rem">
             <div class="card">
-           <partial name="_CategoryDisplayPartial" />  
+                <partial name="_CategoryDisplayPartial" />
                 <div class="card-body">
                     <div class="row">
                         @{
                             foreach (var category in Model)
                             {
-                                <div class="col-md-6 col-xl-4 ml-auto mr-auto abc" style="padding-bottom:30px">
-                                        <div class=" categoryTitle">@category.CategoryName</div>
-                                        <img src=@category.Image asp-append-version="true" class="img-fluid  cardImg" />
+                                <div class="col-md-6 col-xl-4 ml-auto mr-auto abc">
+                                    <div class=" categoryTitle">@category.CategoryName</div>
+                                    <img src=@category.Image asp-append-version="true" class="img-fluid  cardImg" />
+                                    <a class="btn mt-3 text-white" style="background-color:black" asp-action="EditCategory" asp-controller="Category" asp-route-Id="@category.CategoryId">Edit</a>
                                 </div>
+
                             }
                         }
                     </div>

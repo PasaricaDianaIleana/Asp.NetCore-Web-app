@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineStore.ViewsModel
+namespace OnlineStore.ViewsModel.CategoryViewModels
 {
     public class CategoryViewModel
     {
