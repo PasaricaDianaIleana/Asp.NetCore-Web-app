@@ -22,8 +22,4 @@
     <ProjectReference Include="..\OnlineShop_Service\OnlineShop_Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Colors\" />
-  </ItemGroup>
-
 </Project>
