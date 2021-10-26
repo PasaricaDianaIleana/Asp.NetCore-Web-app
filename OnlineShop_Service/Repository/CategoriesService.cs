@@ -30,6 +30,11 @@ namespace OnlineShop_Service.Repository
             await _context.SaveChangesAsync();
         }
 
+        public Task Delete(Color color)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IList<Category>> GetAll()
         {
             return await _context.Categories.ToListAsync();

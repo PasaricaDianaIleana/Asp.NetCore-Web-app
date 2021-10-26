@@ -12,7 +12,7 @@ namespace DataLayer.Repository
         Task<Category> GetCategoryById(int id);
         Task<IList<Category>> GetAll();
         Task Add(Category category);
-        Task Delete(int id);
+        Task Delete(Color color);
 
     }
 }

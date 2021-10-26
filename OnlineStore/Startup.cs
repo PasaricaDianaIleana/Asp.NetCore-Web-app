@@ -34,6 +34,7 @@ namespace OnlineStore
             services.AddRazorPages();
             services.AddScoped<ICategory, CategoriesService>();
             services.AddScoped<IProduct, ProductsService>();
+            services.AddScoped<IColor, ColorsService>();
             services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 6;
