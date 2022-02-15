@@ -11,5 +11,10 @@ namespace OnlineStore.ViewsModel.ColorViewModels
         [MaxLength(20)]
         [Required]
         public string Name { get; set; }
+
+        public int ColorId { get; set; }
+
+        [Required]
+        public string HexValue { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿<link href="~/css/site.css" rel="stylesheet" />
+﻿@model IEnumerable<OnlineStore.ViewsModel.ColorViewModels.ColorViewModel>
+<link href="~/css/site.css" rel="stylesheet" />
 <div class="container">
     <div class="row">
         <div class="col-md-2" style="margin-left:-8rem;margin-top:2rem">
@@ -10,10 +11,20 @@
                 <partial name="_ColorDisplayPartial" />
                 <div class="card-body">
                     <div class="row">
-                       colors
-                    </div>
+                      @{
+                            foreach(var color in Model)
+                            {
+                                <div class="col-md-6 col-xl-4 ml-auto mr-auto abc">
+                                <div class="colorName">@color.Name</div>
+                                <input type="color" id="head" name="head" disabled value="@color.HexValue">
+                                <a class="btn mt-3 text-white" style="background-color:black" asp-action="EditColor" asp-controller="Colors" asp-route-Id="@color.ColorId"></a>
+                                </div>
+                            }
+                        }
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>>

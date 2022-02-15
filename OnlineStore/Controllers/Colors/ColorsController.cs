@@ -1,5 +1,6 @@
 ﻿using DataLayer.Repository;
 using Microsoft.AspNetCore.Mvc;
+using OnlineStore.ViewsModel.ColorViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,16 @@ namespace OnlineStore.Controllers.Colors
             _repo = repo;
         }
         
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var colors= (await _repo.GetAllColors())
+                .Select(Color=> new ColorViewModel
+                {
+                    Name=Color.Name,
+                    HexValue=Color.HexValue
+                }).ToList();
+            return View(colors);
         }
     }
 }

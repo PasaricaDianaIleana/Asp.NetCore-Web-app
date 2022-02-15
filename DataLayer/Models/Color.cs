@@ -12,6 +12,9 @@ namespace DataLayer.Models
         [MaxLength(20)]
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        public string HexValue { get; set; }
         public IList<ProductOptions> ProductOptions { get; set; }
     }
 }

@@ -15,7 +15,7 @@
                             foreach (var category in Model)
                             {
                                 <div class="col-md-6 col-xl-4 ml-auto mr-auto abc">
-                                    <div class=" categoryTitle">@category.CategoryName</div>
+                                    <div class="categoryTitle">@category.CategoryName</div>
                                     <img src=@category.Image asp-append-version="true" class="img-fluid  cardImg" />
                                     <a class="btn mt-3 text-white" style="background-color:black" asp-action="EditCategory" asp-controller="Category" asp-route-Id="@category.CategoryId">Edit</a>
                                 </div>
