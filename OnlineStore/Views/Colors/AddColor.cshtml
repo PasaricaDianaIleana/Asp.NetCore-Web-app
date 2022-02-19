@@ -1,0 +1,52 @@
+﻿@model OnlineStore.ViewsModel.ColorViewModels.CreateColorViewModel;
+
+@{
+    ViewBag.Title="Create color";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" style="margin-left:-8rem;margin-top:2rem">
+            <partial name="_ActionsDisplayPartial" />
+        </div>
+        <div class="col-md-10" style="margin-left:8rem;margin-top:2rem">
+            <div class="card">
+                <partial name="_ColorDisplayPartial" />
+                <div class="card-body">
+                    <form  method="post" asp-controller="Colors" asp-action="AddColor">
+                         <div asp-validation-summary="All" class="text-danger"></div>
+                         <div class="form-group">
+                            <input type="color" id="hexColor" name="HexValue" class="form-control" asp-for="HexValue"/>
+                            <span asp-validation-for="HexValue" class="text-danger"></span>
+                         </div>
+                         <div class="form-group">
+                              <input asp-for="ColorName" type="text" id="color" class="form-control">
+                              <span asp-validation-for="ColorName" class="text-danger"></span>
+                         </div>
+                          <div class="form-group">
+                            <button class="btn  btn-primary mt-4" style="cursor:pointer;" type="submit">Create</button>
+                        </div>
+                         @section Scripts{
+                             <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"> </script>
+                           <script>
+                                $(document).ready(function () {
+                                $('#hexColor').on('change', function(){
+                                      let hexValue= $(this).val();
+                                      console.log(hexValue);
+                                      let color= ntc.name(hexValue);
+                                      $('#color').val(color[1]);
+                                         console.log(color);
+                                   });
+                                 
+                                });
+                            
+                            </script>
+                        
+                        }
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

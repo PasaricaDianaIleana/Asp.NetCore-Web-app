@@ -1,4 +1,5 @@
-﻿using DataLayer.Repository;
+﻿using DataLayer.Models;
+using DataLayer.Repository;
 using Microsoft.AspNetCore.Mvc;
 using OnlineStore.ViewsModel.ColorViewModels;
 using System;
@@ -27,6 +28,26 @@ namespace OnlineStore.Controllers.Colors
                     HexValue=Color.HexValue
                 }).ToList();
             return View(colors);
+        }
+        [HttpGet]
+        public IActionResult AddColor()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddColor(CreateColorViewModel colorView)
+        {
+            if (ModelState.IsValid)
+            {
+                Color color = new Color
+                {
+                    Name= colorView.ColorName,
+                    HexValue = colorView.HexValue
+                }; 
+               await _repo.AddColor(color);
+                return RedirectToAction("Index", new { id = color.ColorId });
+            }
+            return View();
         }
     }
 }
